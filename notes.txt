@@ -108,3 +108,6 @@ Variables
     Package scoped
         Cannot use :=
         Can have unused variables
+
+Constants
+    CAN have unused constants at both function scope & package scope
