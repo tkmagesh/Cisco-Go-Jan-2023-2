@@ -99,3 +99,12 @@ Data Types
     type aliases
     byte (alias for uint8)
     rune (alias for int32) (unicode code points)
+
+Variables
+    Function scoped
+        Can use :=
+        Cannot have unused variables
+
+    Package scoped
+        Cannot use :=
+        Can have unused variables
