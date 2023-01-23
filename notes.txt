@@ -135,3 +135,6 @@ Error
         errors.New()
 
 Deferred Functions
+
+Panic & Recovery
+    Panic => a state in the application where the application execution cannot proceed further
