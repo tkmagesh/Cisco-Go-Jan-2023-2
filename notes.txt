@@ -1,0 +1,59 @@
+Magesh Kuppan
+
+Schedule:
+    Commence    : 9:00 AM
+    Tea Break   : 10:45 AM (15 mins)
+    Lunch Break : 12:30 PM (1 hour)
+    Tea Break   : 3:15 PM (15 mins)
+    Wind up     : 5:00 PM
+
+Methodology:
+    No powerpoints
+    No scheduled time for Q & A
+
+
+Why Go?
+    * Simplicity
+        ONLY 25 keywords
+        - No access modifiers (No public, private, protected, internal etc)
+        - No classes (only structs)
+        - No inheritence (only composition)
+        - No reference types (everyting is a value)
+        - No exceptions (only errors)
+        - No "try catch finally" construct
+        - No pointer arithmetic
+        - No implicity type conversions 
+
+    * Close to hardware
+        - No VM 
+        - Compile to native code
+        - Tooling support for cross-compilation
+        - Performance is equivalent to C++
+
+    * Concurrency
+        - Ability to have more than one execution path
+        - Lightweight Concurrency model using goroutines
+        - 1 OS Thread (2 MB) vs 1 Goroutine (4 KB)
+        - Language support for concurrency
+            Go keyword, channel data type (used for communication between goroutines), channel operator (<-), range & select case constructs
+        - APIs support
+            "sync" package
+            "sync/atomic" package
+
+Software Requirements:
+    1. Go tools (https://go.dev/dl)
+        go version
+    2. Visual Studio Code (https://code.visualstudio.com/download)
+        Go extends for Visual Studio (https://marketplace.visualstudio.com/items?itemName=golang.Go)
+    3. GIT client
+    4. htop (https://htop.dev/)
+    
+To run a go program
+    go run <file_name.go>
+
+To create a build
+    go build <file_name.go>
+    go build -o <binary_name> <file_name.go>
+
+    
+
