@@ -55,5 +55,22 @@ To create a build
     go build <file_name.go>
     go build -o <binary_name> <file_name.go>
 
-    
+To list all environment variables
+    go env
+
+to get the values of specific environment variables    
+    go env <var-1> <var-2>
+
+to set the values of specific environment variables
+    go env -w <var-1>=<val-1> <var-2>=<val-2>
+
+Environment variables for cross-compilation
+    GOARCH
+    GOOS
+
+To get the list of supported OS/arch for cross compilation
+    go tool dist list
+
+Example of cross compilation
+    GOOS=windows GOARCH=386 go build <file_name.go>
 
