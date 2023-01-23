@@ -127,3 +127,9 @@ Functions
         - Assign functions to variables
         - Pass functions as arguments to other functions
         - Return functions as return values
+
+Error
+    values that implement "error" interface
+    Creation
+        fmt.Errorf()
+        errors.New()
