@@ -133,3 +133,5 @@ Error
     Creation
         fmt.Errorf()
         errors.New()
+
+Deferred Functions
