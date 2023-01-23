@@ -118,3 +118,12 @@ Constructs
     switch case
     for
     func 
+
+Functions
+    Named Results
+    Variadic functions
+    Anonymous functions
+    Higher Order functions (functions are first class citizens)
+        - Assign functions to variables
+        - Pass functions as arguments to other functions
+        - Return functions as return values
