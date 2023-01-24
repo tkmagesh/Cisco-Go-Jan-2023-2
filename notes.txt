@@ -156,3 +156,26 @@ Modules & Packages
     To build a module
         go build .
         go build -o <binary_name> .
+
+    To add a 3rd party package
+        go get <package_name>
+            ex: go get github.com/fatih/color
+        downloaded at GOPATH/pkg folder
+
+    To update the go.mod file
+        go mod tidy
+
+    To download the dependencies (based on the references in the go.mod file)
+        go mod download
+
+    To localize the dependencies
+        go mod vendor
+
+    To install go binaries (command line tools)
+        go install <module_name>
+            installed in the GOPATH/bin folder
+
+            
+    Other usefule mod commands
+        go mod graph
+        go mod why <module_name>
