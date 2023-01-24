@@ -179,3 +179,14 @@ Modules & Packages
     Other usefule mod commands
         go mod graph
         go mod why <module_name>
+
+
+Collections
+    Array
+        Fixed size typed collection
+
+    Slice
+        Variable size typed collection
+
+    Map
+        Typed collection of key/value pairs
