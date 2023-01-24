@@ -42,4 +42,29 @@ func main() {
 	fmt.Println("nos[2:5] =", nos[2:5])
 	fmt.Println("nos[2:] =", nos[2:])
 	fmt.Println("nos[:5] =", nos[:5])
+
+	fmt.Println("original list :", nos)
+	sort(nos)
+	fmt.Println("after sorting, list :", nos)
+
+	/*
+		subset := nos[2:5]
+		subset[0] = 10000
+		fmt.Println("subset = ", subset)
+		fmt.Println("nos = ", nos)
+	*/
+
+	//to create a copy
+	//?
+
+}
+
+func sort(list []int) /* do not return anything */ {
+	for i := 0; i < 4; i++ {
+		for j := i + 1; j < 5; j++ {
+			if list[i] > list[j] {
+				list[i], list[j] = list[j], list[i]
+			}
+		}
+	}
 }

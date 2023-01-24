@@ -34,6 +34,7 @@ func main() {
 
 	sort(&nos)
 	fmt.Println("After sorting, nos = ", nos)
+
 }
 
 func sort(list *[5]int) /* do not return anything */ {
