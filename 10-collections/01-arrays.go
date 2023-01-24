@@ -45,7 +45,7 @@ func sort(list *[5]int) /* do not return anything */ {
 					(*list)[i], (*list)[j] = (*list)[j], (*list)[i]
 				}
 			*/
-			if list[i] > list[j] {
+			if list[i] > list[j] { // accessing the elements using the pointer is allowed
 				list[i], list[j] = list[j], list[i]
 			}
 		}
