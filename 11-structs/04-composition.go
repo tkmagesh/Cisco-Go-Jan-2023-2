@@ -41,6 +41,11 @@ func main() {
 
 	// fmt.Println(grapes.Product.Id, grapes.Product.Cost)
 	fmt.Println(grapes.Id, grapes.Name, grapes.Cost, grapes.Expiry)
+
+	fmt.Println(Format(grapes.Product))
+	fmt.Println("After applying 10% discount")
+	ApplyDiscount(&grapes.Product, 10)
+	fmt.Println(Format(grapes.Product))
 }
 
 /*
@@ -49,3 +54,11 @@ Write an "ApplyDiscount" function that updates the given "Product's" cost by app
 
 Use the above functions for a "PerishableProduct" object
 */
+
+func Format(product Product) string {
+	return fmt.Sprintf("Id = %d, Name = %q, Cost = %.2f", product.Id, product.Name, product.Cost)
+}
+
+func ApplyDiscount(product *Product, discount float32) {
+	product.Cost = product.Cost * ((100 - discount) / 100)
+}
