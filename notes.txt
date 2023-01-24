@@ -138,3 +138,21 @@ Deferred Functions
 
 Panic & Recovery
     Panic => a state in the application where the application execution cannot proceed further
+
+
+Modules & Packages
+    Module
+        Any code that is versioned together & deployed together
+    Package
+        internal organization of a module
+
+    To create a module
+        module_name = "repo path of the module"
+        go mod init <module_name>
+
+    To run a module
+        go run .
+
+    To build a module
+        go build .
+        go build -o <binary_name> .
