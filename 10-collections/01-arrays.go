@@ -32,10 +32,21 @@ func main() {
 	fmt.Printf("&n1 = %p, &n2 = %p\n", &n1, &n2)
 	fmt.Println(n1 == n2)
 
-	sort(nos)
+	sort(&nos)
 	fmt.Println("After sorting, nos = ", nos)
 }
 
-func sort() /* do not return anything */ {
-
+func sort(list *[5]int) /* do not return anything */ {
+	for i := 0; i < 4; i++ {
+		for j := i + 1; j < 5; j++ {
+			/*
+				if (*list)[i] > (*list)[j] {
+					(*list)[i], (*list)[j] = (*list)[j], (*list)[i]
+				}
+			*/
+			if list[i] > list[j] {
+				list[i], list[j] = list[j], list[i]
+			}
+		}
+	}
 }
