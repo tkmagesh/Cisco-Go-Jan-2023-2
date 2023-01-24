@@ -55,7 +55,12 @@ func main() {
 	*/
 
 	//to create a copy
-	//?
+	fmt.Println("Creating a copy of the slice")
+	subset := make([]int, 3)
+	copy(subset, nos[2:5])
+	subset[0] = 10000
+	fmt.Println("subset = ", subset)
+	fmt.Println("nos = ", nos)
 
 }
 
