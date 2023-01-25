@@ -200,4 +200,17 @@ Concurrency
         go run --race 07-demo.go
         go build --race 07-demo.go
 
+    Channels
+        Data type to enable communication between goroutines
+        Declaration
+            var ch chan int
+        Instantiation
+            ch = make(chan int)
+        Operations ( <- operator)
+            Send
+                ch <- 100
+            Receive
+                data := <- ch
+
+
         
