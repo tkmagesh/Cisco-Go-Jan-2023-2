@@ -51,8 +51,29 @@ Write the apis for the following
 			etc
 */
 
+type Products []Product
+
+func (products Products) IndexOf(product Product) int {
+	for idx, p := range products {
+		if p == product {
+			return idx
+		}
+	}
+	return -1
+}
+
+func (products Products) Filter(predicate func(Product) bool) Products {
+	var result Products
+	for _, p := range products {
+		if predicate(p) {
+			result = append(result, p)
+		}
+	}
+	return result
+}
+
 func main() {
-	products := []Product{
+	products := Products{
 		Product{105, "Pen", 5, 50, "Stationary"},
 		Product{107, "Pencil", 2, 100, "Stationary"},
 		Product{103, "Marker", 50, 20, "Utencil"},
@@ -61,4 +82,13 @@ func main() {
 		Product{104, "Scribble Pad", 20, 20, "Stationary"},
 		Product{109, "Golden Pen", 2000, 20, "Stationary"},
 	}
+
+	kettle := Product{101, "Kettle", 2500, 10, "Utencil"}
+	fmt.Println("Index of kettle :", products.IndexOf(kettle))
+
+	costlyProductPredicate := func(p Product) bool {
+		return p.Cost > 1000
+	}
+	costlyProducts := products.Filter(costlyProductPredicate)
+	fmt.Println(costlyProducts)
 }
