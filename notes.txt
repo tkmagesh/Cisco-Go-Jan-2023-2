@@ -195,3 +195,9 @@ Collections
 Concurrency
     concurrency is NOT parallelism
     concurrency design = application with more than one execution path
+
+    Detecting data race
+        go run --race 07-demo.go
+        go build --race 07-demo.go
+
+        
