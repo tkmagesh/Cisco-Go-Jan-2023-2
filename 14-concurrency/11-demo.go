@@ -9,7 +9,6 @@ import (
 func main() {
 
 	ch := add(100, 200)
-	ch <- 100
 	result := <-ch
 	fmt.Println("Result :", result)
 }
