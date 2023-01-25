@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -75,6 +76,46 @@ func (products Products) String() string {
 	return sb.String()
 }
 
+func (products Products) sortByField(field string) {
+	switch field {
+	case "Id":
+		sort.Sort(products)
+	case "Name":
+		sort.Sort(ByName{products})
+	default:
+		sort.Sort(ByCost{products})
+	}
+}
+
+/* sort.Interface implementation */
+func (a Products) Len() int {
+	return len(a)
+}
+
+func (a Products) Swap(i, j int) {
+	a[i], a[j] = a[j], a[i]
+}
+
+func (a Products) Less(i, j int) bool {
+	return a[i].Id < a[j].Id
+}
+
+type ByName struct {
+	Products
+}
+
+func (a ByName) Less(i, j int) bool {
+	return a.Products[i].Name < a.Products[j].Name
+}
+
+type ByCost struct {
+	Products
+}
+
+func (a ByCost) Less(i, j int) bool {
+	return a.Products[i].Cost < a.Products[j].Cost
+}
+
 func main() {
 	products := Products{
 		Product{105, "Pen", 5, 50, "Stationary"},
@@ -101,4 +142,16 @@ func main() {
 	costlyProducts := products.Filter(costlyProductPredicate)
 	// fmt.Println(costlyProducts.Format())
 	fmt.Println(costlyProducts)
+
+	fmt.Println("Sort By Id")
+	products.sortByField("Id")
+	fmt.Println(products)
+
+	fmt.Println("Sort By Name")
+	products.sortByField("Name")
+	fmt.Println(products)
+
+	fmt.Println("Sort By Cost")
+	products.sortByField("Cost")
+	fmt.Println(products)
 }
