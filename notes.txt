@@ -190,3 +190,8 @@ Collections
 
     Map
         Typed collection of key/value pairs
+
+
+Concurrency
+    concurrency is NOT parallelism
+    concurrency design = application with more than one execution path
