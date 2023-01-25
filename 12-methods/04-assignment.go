@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 type Product struct {
@@ -72,6 +73,14 @@ func (products Products) Filter(predicate func(Product) bool) Products {
 	return result
 }
 
+func (products Products) Format() string {
+	var sb strings.Builder
+	for _, p := range products {
+		sb.WriteString(fmt.Sprintf("%s\n", p.Format()))
+	}
+	return sb.String()
+}
+
 func main() {
 	products := Products{
 		Product{105, "Pen", 5, 50, "Stationary"},
@@ -83,12 +92,16 @@ func main() {
 		Product{109, "Golden Pen", 2000, 20, "Stationary"},
 	}
 
+	fmt.Println("Initial List")
+	fmt.Println(products.Format())
+
 	kettle := Product{101, "Kettle", 2500, 10, "Utencil"}
 	fmt.Println("Index of kettle :", products.IndexOf(kettle))
 
+	fmt.Println("Costly Products")
 	costlyProductPredicate := func(p Product) bool {
 		return p.Cost > 1000
 	}
 	costlyProducts := products.Filter(costlyProductPredicate)
-	fmt.Println(costlyProducts)
+	fmt.Println(costlyProducts.Format())
 }
